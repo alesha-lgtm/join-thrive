@@ -940,7 +940,7 @@ export function PremierAndTools() {
               maxWidth: "100%",
               height: "auto",
               display: "block",
-              marginBottom: 18,
+              margin: "0 auto 18px",
             }}
           />
           <div
