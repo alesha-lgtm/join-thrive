@@ -10,7 +10,7 @@ export const metadata = {
 const steps = [
   [
     "01",
-    "You start at 90/10",
+    "Experienced agents start at 90/10",
     "From your very first closing of the year, you keep 90% of your commission. Thrive's 10%, your “company dollar,” is the only thing that counts toward your cap.",
   ],
   [
