@@ -58,7 +58,7 @@ export default function Header() {
           }
           alt="Thrive Real Estate Brokers"
           onClick={() => nav("home")}
-          style={{ height: 42, width: "auto", cursor: "pointer" }}
+          style={{ height: 56, width: "auto", cursor: "pointer" }}
         />
         <nav style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <span className="nav-links">

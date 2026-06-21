@@ -23,7 +23,7 @@ export default function Footer() {
             <img
               src="/assets/logos/thrive-logo-white-transparent.png"
               alt="Thrive"
-              style={{ height: 38, marginBottom: 20 }}
+              style={{ height: 52, marginBottom: 20 }}
             />
             <p
               style={{
