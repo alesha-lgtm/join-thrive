@@ -59,6 +59,8 @@ export default function Calculator({ embedded }) {
   const [commPct, setCommPct] = useState(0); // YOUR commission rate, you set it
   const [curSplit, setCurSplit] = useState(70); // % the agent keeps now
   const [franchisePct, setFranchisePct] = useState(0); // franchise royalty paid now
+  const [monthlyNow, setMonthlyNow] = useState(0); // desk / monthly fee paid now ($/mo)
+  const [perTxnNow, setPerTxnNow] = useState(0); // per-transaction fee paid now ($/deal)
 
   const commissionRate = commPct / 100;
   const gci = deals * price * commissionRate;
@@ -69,8 +71,15 @@ export default function Calculator({ embedded }) {
     cappedOut && gci > 0 ? Math.round(deals * (1 - capGci / gci)) : 0;
   const perTxnFees = dealsAfterCap * PER_TXN;
   const thriveKeep = gci > 0 ? gci - companyDollar - TECH_YR - perTxnFees : 0;
-  // What you keep now = your split, minus any franchise royalty skimmed off the top.
-  const nowKeep = Math.max(0, gci * (curSplit / 100) - gci * (franchisePct / 100));
+  // What you keep now = your split, minus any franchise royalty skimmed off the
+  // top, minus the desk/monthly fee and any per-transaction fee you pay today.
+  const nowKeep = Math.max(
+    0,
+    gci * (curSplit / 100) -
+      gci * (franchisePct / 100) -
+      monthlyNow * 12 -
+      perTxnNow * deals
+  );
   const diff = thriveKeep - nowKeep;
 
   return (
@@ -148,6 +157,25 @@ export default function Calculator({ embedded }) {
           step={0.5}
           onChange={setFranchisePct}
           format={(v) => v.toFixed(1)}
+        />
+        <Row
+          label="Monthly fee you pay now"
+          value={monthlyNow}
+          sub="/mo"
+          min={0}
+          max={1500}
+          step={25}
+          onChange={setMonthlyNow}
+          format={fmt}
+        />
+        <Row
+          label="Per-transaction fee you pay now"
+          value={perTxnNow}
+          min={0}
+          max={1000}
+          step={25}
+          onChange={setPerTxnNow}
+          format={fmt}
         />
         {commPct === 0 && (
           <p
