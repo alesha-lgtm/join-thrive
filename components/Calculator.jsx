@@ -408,17 +408,19 @@ export default function Calculator({ embedded }) {
         )}
         <div
           style={{
-            background: "rgba(125,130,99,0.28)",
-            border: "1px solid var(--sage-400)",
-            borderRadius: "var(--radius-xs)",
-            padding: "16px 18px",
+            background:
+              "linear-gradient(135deg, var(--sage-300), var(--sage-200))",
+            border: "1px solid rgba(255,255,255,0.35)",
+            borderRadius: "var(--radius-sm)",
+            padding: "22px 24px",
+            boxShadow: "0 14px 34px rgba(0,0,0,0.34)",
           }}
         >
           <div
             style={{
               fontFamily: "var(--font-serif)",
-              fontSize: 34,
-              color: "var(--paper)",
+              fontSize: 42,
+              color: "var(--ink-700)",
               lineHeight: 1,
             }}
           >
@@ -428,7 +430,7 @@ export default function Calculator({ embedded }) {
               style={{
                 fontFamily: "var(--font-sans)",
                 fontSize: 13,
-                color: "rgba(251,250,246,0.7)",
+                color: "rgba(37,49,62,0.65)",
                 letterSpacing: "0.04em",
               }}
             >
@@ -439,10 +441,11 @@ export default function Calculator({ embedded }) {
           <p
             style={{
               fontFamily: "var(--font-sans)",
-              fontSize: 13,
+              fontSize: 13.5,
+              fontWeight: 500,
               lineHeight: 1.5,
-              color: "var(--sage-100)",
-              margin: "8px 0 0",
+              color: "var(--ink-600)",
+              margin: "10px 0 0",
             }}
           >
             {diff >= 0
