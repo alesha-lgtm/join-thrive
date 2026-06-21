@@ -48,15 +48,43 @@ Posts to **Web3Forms** (no backend). Access key is in `components/ContactForm.js
 
 ## File map
 - `app/` — routes: `page.jsx` (home), `why-thrive/`, `the-split/`, `faq/`, `contact/`;
-  `layout.jsx` (metadata + Header/Footer); `globals.css` (ALL design tokens + responsive
-  classes: `.shell`, `.grid-*`, `.hero*`, `.headline-oneline`, `.cmp-*`, button/field styles).
+  `layout.jsx` (metadata + Header/Footer; also holds the **Open Graph / Twitter link-preview**
+  tags + `metadataBase`); `globals.css` (ALL design tokens + responsive classes: `.shell`,
+  `.grid-*`, `.hero*`, `.headline-oneline`, `.cmp-*`, button/field styles).
+  NOTE: the "01/02/03" step copy on The Split lives in `app/the-split/page.jsx` (the `steps`
+  array), NOT in `sections.jsx`.
 - `components/` — `sections.jsx` (Hero, ProblemStatement, Pillars, PremierAndTools, SplitModel,
   Comparison, CalculatorSection, ChatSection, FounderQuote, MakingTheMove, IbcSection, FinalCta,
   PageHeader, Wrap); `Header.jsx`, `Footer.jsx`, `Calculator.jsx`, `AskThrive.jsx` (scripted chat
   + keyword router + honest fallback), `FaqAccordion.jsx`, `ContactForm.jsx`, `Icon.jsx`,
   `useNav.js`; `ui/` (Button, Eyebrow, Input).
 - `public/assets/` — `fonts/`, `logos/` (thrive marks, `tpc/tah/ibc`, leaf, favicon),
-  `images/` (`hero.jpg`, `alesha-broker.jpg` = founder photo, `ph-*.jpg` = page-header backgrounds).
+  `images/` (`hero.jpg`, `alesha-broker.jpg` = founder photo, `ph-*.jpg` = page-header backgrounds,
+  **`og-preview.jpg`** = 1200x630 social/link-preview card; regenerate with `/tmp/make_og.py`-style
+  PIL script using the white logo + brand fonts if the card copy ever changes).
+
+## Social / link preview (set 2026-06-20)
+When the live URL is shared (iMessage/texting, Facebook, LinkedIn, X, Slack, WhatsApp) it renders
+a branded card: dark slate-navy, white Thrive logo, "Keep more of what you earn.", the key numbers,
+and the URL. Image = `public/assets/images/og-preview.jpg`; tags = `openGraph` + `twitter` in
+`app/layout.jsx` (with `metadataBase` = the production URL so the image resolves to an absolute URL
+at build). Platforms cache previews hard — to force a refresh after a copy change, re-scrape the URL
+in Facebook's Sharing Debugger and LinkedIn's Post Inspector.
+
+## Earnings calculator (`components/Calculator.jsx`)
+The single most important interactive piece. Structure as of 2026-06-20:
+- **Left "Your Production" card = the agent's CURRENT brokerage numbers:** closings/year, average
+  sale price, your commission rate (defaults 0, antitrust), current split % you keep, franchise fee
+  you pay now, **monthly fee you pay now**, **per-transaction fee you pay now**.
+- **`nowKeep`** (what you keep today) = GCI × split% − GCI × franchise% − monthlyNow×12 − perTxnNow×deals.
+- **`thriveKeep`** = GCI − company dollar (10% capped at $12,000) − $1,500 tech (125×12) − $250×deals-after-cap.
+- **Right navy results panel** shows three things, top to bottom: a Beyond Sweet **script header**
+  "What you take home" (bold, one line, nowrap), then **"At your brokerage today" $nowKeep**, then
+  **"At Thrive" $thriveKeep** (bigger), then the Thrive breakdown ("How the Thrive number works"),
+  then the **difference callout** (a bright sage gradient chip with shadow that intentionally pops):
+  the +$ amount and the line "That's how much more you would have made at Thrive."
+- The $250/transaction fee only appears (math + line item) once GCI passes $120,000 (the cap point).
+  Do NOT remove it when editing the panel.
 
 ## Design cheatsheet
 - **Fonts:** Butler (serif — headings, numbers), Montserrat (sans — body/UI; tracked-uppercase
