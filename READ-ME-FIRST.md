@@ -68,6 +68,11 @@ Posts to **Web3Forms** (no backend). Access key is in `components/ContactForm.js
 - Headings use `text-wrap: balance` to avoid a single orphan word on the last line.
 - Responsive: grids collapse to one column on phones via the `.grid-*` classes; header nav hides
   on phones; the comparison table scrolls horizontally.
+- **Logo sizes (set 2026-06-20):** header logo `height: 64` in `components/Header.jsx` (sits in an
+  80px sticky bar; the "REAL ESTATE BROKERS" subline is readable at this size). Footer logo
+  `height: 120` in `components/Footer.jsx`, intentionally much larger than the header. Owner wanted
+  the footer mark big and the subline legible. Both use the white-transparent PNG (header swaps to
+  `thrive-logo-ink.png` once the sticky header turns opaque on scroll / non-home pages).
 
 ## Build note
 `next.config.mjs` gates static export behind `BUILD_EXPORT=true` (only `npm run build` sets it).
@@ -84,4 +89,9 @@ process it locally with `sips` or Python PIL.
 - Add a footer link to this site from the WordPress main site (Custom Link →
   https://joinus.thriverealestatebrokers.com).
 - The founder-quote wording is a representative draft; confirm with Alesha.
-- "Ask Thrive" chat is scripted (keyword router + honest fallback); could become a live assistant later.
+- "Ask Thrive" chat is scripted (keyword router + honest fallback). **Decision 2026-06-20: keep it
+  scripted, do NOT make it live AI.** Reasoning: a live LLM would need a backend + API key (site is
+  static), adds cost, and creates antitrust exposure (it could phrase or invent a commission rate
+  against the hard rule). The scripted version is enough to earn the "Let's Talk" click. If more
+  coverage is wanted, add scripted Q&As + keyword routes in `components/AskThrive.jsx` (cheap, safe,
+  no backend), not live AI.
