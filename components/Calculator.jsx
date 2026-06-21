@@ -221,10 +221,9 @@ export default function Calculator({ embedded }) {
       >
         <div
           style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: 11,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
+            fontFamily: "var(--font-script)",
+            fontSize: 32,
+            lineHeight: 1,
             color: "var(--sage-300)",
             marginBottom: 18,
           }}

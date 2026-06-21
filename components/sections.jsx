@@ -726,8 +726,9 @@ export function CalculatorSection() {
             margin: "0 auto",
           }}
         >
-          Drag the sliders to match your year. Real math, no sign-up, no sales
-          pitch.
+          Drag the sliders to match your year.
+          <br />
+          Real math, no sign-up, no sales pitch.
         </p>
       </div>
       <Calculator />
