@@ -222,7 +222,9 @@ export default function Calculator({ embedded }) {
         <div
           style={{
             fontFamily: "var(--font-script)",
-            fontSize: 32,
+            fontSize: 26,
+            fontWeight: 700,
+            whiteSpace: "nowrap",
             lineHeight: 1,
             color: "var(--sage-300)",
             marginBottom: 18,
