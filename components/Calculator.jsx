@@ -226,15 +226,48 @@ export default function Calculator({ embedded }) {
             letterSpacing: "0.16em",
             textTransform: "uppercase",
             color: "var(--sage-300)",
-            marginBottom: 8,
+            marginBottom: 18,
           }}
         >
-          You keep at Thrive
+          What you take home
+        </div>
+        <div
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 11.5,
+            letterSpacing: "0.04em",
+            color: "rgba(251,250,246,0.6)",
+            marginBottom: 6,
+          }}
+        >
+          At your brokerage today
         </div>
         <div
           style={{
             fontFamily: "var(--font-serif)",
-            fontSize: 58,
+            fontSize: 34,
+            lineHeight: 1,
+            color: "rgba(251,250,246,0.82)",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          {fmt(nowKeep)}
+        </div>
+        <div
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 11.5,
+            letterSpacing: "0.04em",
+            color: "var(--sage-300)",
+            margin: "22px 0 6px",
+          }}
+        >
+          At Thrive
+        </div>
+        <div
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontSize: 52,
             lineHeight: 1,
             color: "var(--paper)",
             letterSpacing: "-0.01em",
@@ -249,6 +282,18 @@ export default function Calculator({ embedded }) {
             margin: "26px 0",
           }}
         />
+        <div
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 10.5,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "rgba(251,250,246,0.5)",
+            marginBottom: 16,
+          }}
+        >
+          How the Thrive number works
+        </div>
         <div
           style={{
             display: "flex",
@@ -378,7 +423,7 @@ export default function Calculator({ embedded }) {
               marginBottom: 4,
             }}
           >
-            {diff >= 0 ? "More in your pocket vs. today" : "Difference vs. today"}
+            {diff >= 0 ? "More in your pocket at Thrive" : "Difference at Thrive"}
           </div>
           <div
             style={{
