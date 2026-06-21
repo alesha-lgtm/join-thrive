@@ -415,21 +415,10 @@ export default function Calculator({ embedded }) {
         >
           <div
             style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: 11,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "var(--sage-200)",
-              marginBottom: 4,
-            }}
-          >
-            {diff >= 0 ? "More in your pocket at Thrive" : "Difference at Thrive"}
-          </div>
-          <div
-            style={{
               fontFamily: "var(--font-serif)",
-              fontSize: 30,
+              fontSize: 34,
               color: "var(--paper)",
+              lineHeight: 1,
             }}
           >
             {diff >= 0 ? "+ " : "- "}
@@ -446,6 +435,19 @@ export default function Calculator({ embedded }) {
               / year
             </span>
           </div>
+          <p
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: 13,
+              lineHeight: 1.5,
+              color: "var(--sage-100)",
+              margin: "8px 0 0",
+            }}
+          >
+            {diff >= 0
+              ? "That's how much more you'd keep every year if you were at Thrive."
+              : "That's the difference if you were at Thrive this year."}
+          </p>
         </div>
       </div>
     </div>
