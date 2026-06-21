@@ -445,7 +445,7 @@ export default function Calculator({ embedded }) {
             }}
           >
             {diff >= 0
-              ? "That's how much more you'd keep every year if you were at Thrive."
+              ? "That's how much more you would have made at Thrive."
               : "That's the difference if you were at Thrive this year."}
           </p>
         </div>
