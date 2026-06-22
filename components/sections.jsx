@@ -211,7 +211,7 @@ export function Hero() {
         <div className="hero-stats-inner">
           {[
             ["90/10", "Your split"],
-            ["$12K", "Annual cap, then you keep ~100%"],
+            ["$12K", "Annual cap, then ~100% (less a flat $250 per deal)"],
             ["$125/mo", "Flat tech fee, E&O included"],
             ["$0", "Desk fees · royalties · franchise cut"],
           ].map(([v, l], i) => (

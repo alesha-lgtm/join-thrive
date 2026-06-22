@@ -55,7 +55,7 @@ function Row({ label, value, sub, onChange, min, max, step, format }) {
 
 export default function Calculator({ embedded }) {
   const [deals, setDeals] = useState(18);
-  const [price, setPrice] = useState(385000);
+  const [volume, setVolume] = useState(7000000); // total sales volume last year
   const [commPct, setCommPct] = useState(0); // YOUR commission rate, you set it
   const [curSplit, setCurSplit] = useState(70); // % the agent keeps now
   const [franchisePct, setFranchisePct] = useState(0); // franchise royalty paid now
@@ -63,7 +63,7 @@ export default function Calculator({ embedded }) {
   const [perTxnNow, setPerTxnNow] = useState(0); // per-transaction fee paid now ($/deal)
 
   const commissionRate = commPct / 100;
-  const gci = deals * price * commissionRate;
+  const gci = volume * commissionRate;
   const capGci = CAP / 0.1; // GCI at which the $12K cap is reached
   const companyDollar = Math.min(gci * 0.1, CAP);
   const cappedOut = gci > capGci;
@@ -113,7 +113,7 @@ export default function Calculator({ embedded }) {
           Your Production
         </div>
         <Row
-          label="Closings / year"
+          label="Closings last year"
           value={deals}
           min={2}
           max={60}
@@ -121,16 +121,16 @@ export default function Calculator({ embedded }) {
           onChange={setDeals}
         />
         <Row
-          label="Average sale price"
-          value={price}
-          min={150000}
-          max={1500000}
-          step={5000}
-          onChange={setPrice}
+          label="Sales volume last year"
+          value={volume}
+          min={250000}
+          max={50000000}
+          step={250000}
+          onChange={setVolume}
           format={fmt}
         />
         <Row
-          label="Your commission rate"
+          label="Average commission rate last year"
           value={commPct}
           sub="%"
           min={0}

@@ -3,7 +3,6 @@ import {
   ProblemStatement,
   Pillars,
   PremierAndTools,
-  SplitModel,
   Comparison,
   CalculatorSection,
   ChatSection,
@@ -18,9 +17,8 @@ export default function HomePage() {
     <main>
       <Hero />
       <ProblemStatement />
-      <Pillars />
       <PremierAndTools />
-      <SplitModel />
+      <Pillars />
       <Comparison />
       <CalculatorSection />
       <ChatSection />
