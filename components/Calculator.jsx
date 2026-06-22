@@ -146,7 +146,7 @@ export default function Calculator({ embedded }) {
           max={95}
           step={1}
           onChange={setCurSplit}
-          format={(v) => `${v}%/${100 - v}%`}
+          format={(v) => `${v}/${100 - v}%`}
         />
         <Row
           label="Current franchise fee"
