@@ -241,7 +241,7 @@ export default function Calculator({ embedded }) {
             marginBottom: 6,
           }}
         >
-          At your brokerage today
+          At your current brokerage
         </div>
         <div
           style={{
