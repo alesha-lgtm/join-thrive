@@ -140,13 +140,13 @@ export default function Calculator({ embedded }) {
           format={(v) => v.toFixed(2)}
         />
         <Row
-          label="What you keep now"
+          label="Your current split"
           value={curSplit}
-          sub="%"
           min={50}
           max={95}
           step={1}
           onChange={setCurSplit}
+          format={(v) => `${v}/${100 - v}`}
         />
         <Row
           label="Current franchise fee"
