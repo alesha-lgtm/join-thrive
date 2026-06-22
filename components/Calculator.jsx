@@ -113,7 +113,7 @@ export default function Calculator({ embedded }) {
           Your Production
         </div>
         <Row
-          label="Closings last year"
+          label="Number of closings last year"
           value={deals}
           min={2}
           max={60}
@@ -149,7 +149,7 @@ export default function Calculator({ embedded }) {
           onChange={setCurSplit}
         />
         <Row
-          label="Franchise fee you pay now"
+          label="Current franchise fee"
           value={franchisePct}
           sub="%"
           min={0}
@@ -159,7 +159,7 @@ export default function Calculator({ embedded }) {
           format={(v) => v.toFixed(1)}
         />
         <Row
-          label="Monthly fee you pay now"
+          label="Current monthly fee"
           value={monthlyNow}
           sub="/mo"
           min={0}
@@ -169,7 +169,7 @@ export default function Calculator({ embedded }) {
           format={fmt}
         />
         <Row
-          label="Per-transaction fee you pay now"
+          label="Current per-transaction fee"
           value={perTxnNow}
           min={0}
           max={1000}
