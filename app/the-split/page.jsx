@@ -35,7 +35,7 @@ export default function TheSplitPage() {
     <main>
       <PageHeader
         eyebrow="The Split"
-        title="One low cap. Then the year is yours."
+        title="Start at 90/10. One low cap. Then the year is yours."
         intro="No tiers to climb. No fine print. Here's exactly how the Thrive model works, and why it favors agents who produce."
         image="/assets/images/ph-split.jpg"
       />

@@ -15,7 +15,14 @@ export function Wrap({ children, bg, py = 96, style }) {
   );
 }
 
-export function PageHeader({ eyebrow, title, intro, image, imagePosition }) {
+export function PageHeader({
+  eyebrow,
+  title,
+  intro,
+  image,
+  imagePosition,
+  imageOpacity,
+}) {
   return (
     <div
       style={{
@@ -38,7 +45,7 @@ export function PageHeader({ eyebrow, title, intro, image, imagePosition }) {
               height: "100%",
               objectFit: "cover",
               objectPosition: imagePosition || "center",
-              opacity: 0.4,
+              opacity: imageOpacity ?? 0.4,
             }}
           />
           <div
