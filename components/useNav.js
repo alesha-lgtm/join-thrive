@@ -12,6 +12,7 @@ export const ROUTES = {
   // In-page anchors on the Home screen.
   calculator: "/#calc-anchor",
   move: "/#move-anchor",
+  founder: "/#founder-anchor",
 };
 
 // Derive the active nav id from the current pathname.

@@ -791,7 +791,13 @@ export function ChatSection() {
 export function FounderQuote() {
   return (
     <section
-      style={{ position: "relative", overflow: "hidden", background: "var(--ink-600)" }}
+      id="founder-anchor"
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        background: "var(--ink-600)",
+        scrollMarginTop: 80,
+      }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 40px" }}>
         <div

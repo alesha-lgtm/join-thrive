@@ -23,8 +23,8 @@ export default function Header() {
   const links = [
     ["why", "Why Thrive"],
     ["splits", "The Split"],
-    ["calculator", "Calculator"],
     ["move", "Making the Move"],
+    ["founder", "Meet the Broker"],
     ["faq", "FAQ"],
   ];
 
