@@ -36,7 +36,7 @@ export default function TheSplitPage() {
       <PageHeader
         eyebrow="The Split"
         title="Start at 90/10. One low cap. Then the year is yours."
-        intro="No tiers to climb. No fine print. Here's exactly how the Thrive model works, and why it favors agents who produce."
+        intro="No tiers to climb. No fine print. Here's exactly how the Thrive model works, and why it favors every agent: cap out early and ride near 100%, or have a slower year with no penalty and stay on a strong 90/10."
         image="/assets/images/ph-split.jpg"
       />
       <Wrap bg="var(--paper)" py={88}>

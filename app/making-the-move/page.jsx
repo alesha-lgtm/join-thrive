@@ -12,7 +12,7 @@ export default function MakingTheMovePage() {
         title="Changing brokerages isn't as hard as you think."
         intro="Switching sounds harder than it is. Here's how Thrive makes the transition simple, step by step, with your broker right beside you the whole way."
         image="/assets/images/hero-realestate.jpg"
-        imagePosition="right center"
+        imagePosition="right 72%"
         imageOpacity={0.62}
       />
       <MakingTheMove hideHeading />
