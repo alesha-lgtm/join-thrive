@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Button from "./ui/Button";
 import Eyebrow from "./ui/Eyebrow";
 import Icon, { ICONS } from "./Icon";
@@ -104,8 +105,22 @@ export function PageHeader({ eyebrow, title, intro, image }) {
   );
 }
 
+const HERO_IMAGES = [
+  "/assets/images/hero-realestate.jpg",
+  "/assets/images/hero-houses.jpg",
+];
+
 export function Hero() {
   const nav = useNav();
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    if (HERO_IMAGES.length < 2) return;
+    const id = setInterval(
+      () => setActive((a) => (a + 1) % HERO_IMAGES.length),
+      6500
+    );
+    return () => clearInterval(id);
+  }, []);
   return (
     <section
       className="hero"
@@ -116,19 +131,23 @@ export function Hero() {
         background: "var(--charcoal)",
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/assets/images/hero.jpg"
-        alt=""
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          opacity: 0.42,
-        }}
-      />
+      {HERO_IMAGES.map((src, i) => (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={src}
+          src={src}
+          alt=""
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: i === active ? 0.42 : 0,
+            transition: "opacity 1.4s var(--ease-standard)",
+          }}
+        />
+      ))}
       <div
         style={{
           position: "absolute",
