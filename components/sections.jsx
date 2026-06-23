@@ -321,6 +321,7 @@ export function ProblemStatement() {
 }
 
 export function Pillars() {
+  const nav = useNav();
   const items = [
     [
       ICONS.trend,
@@ -424,6 +425,11 @@ export function Pillars() {
             </div>
           </div>
         ))}
+      </div>
+      <div style={{ textAlign: "center", marginTop: 48 }}>
+        <Button variant="secondary" onClick={() => nav("why")}>
+          See why agents move to Thrive
+        </Button>
       </div>
     </Wrap>
   );
@@ -1056,7 +1062,7 @@ export function PremierAndTools() {
   );
 }
 
-export function MakingTheMove() {
+export function MakingTheMove({ hideHeading }) {
   const points = [
     "I'll map the move around your active deals, so nothing slips",
     "I'll handle the license and MLS transfer right alongside you",
@@ -1067,20 +1073,24 @@ export function MakingTheMove() {
       <div id="move-anchor" style={{ position: "relative", top: -60 }} />
       <div className="grid-split" style={{ gap: 56, alignItems: "center" }}>
         <div>
-          <Eyebrow>Making the Move</Eyebrow>
-          <h2
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontWeight: 400,
-              fontSize: "clamp(30px,3.4vw,42px)",
-              color: "var(--ink-600)",
-              margin: "18px 0 18px",
-              lineHeight: 1.12,
-              maxWidth: 520,
-            }}
-          >
-            Changing brokerages isn&apos;t as hard as you think.
-          </h2>
+          {!hideHeading && (
+            <>
+              <Eyebrow>Making the Move</Eyebrow>
+              <h2
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: 400,
+                  fontSize: "clamp(30px,3.4vw,42px)",
+                  color: "var(--ink-600)",
+                  margin: "18px 0 18px",
+                  lineHeight: 1.12,
+                  maxWidth: 520,
+                }}
+              >
+                Changing brokerages isn&apos;t as hard as you think.
+              </h2>
+            </>
+          )}
           <p
             style={{
               fontFamily: "var(--font-sans)",

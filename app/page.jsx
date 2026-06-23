@@ -1,13 +1,8 @@
 import {
   Hero,
   ProblemStatement,
-  Pillars,
-  PremierAndTools,
-  Comparison,
   CalculatorSection,
-  ChatSection,
-  FounderQuote,
-  MakingTheMove,
+  Pillars,
   IbcSection,
   FinalCta,
 } from "@/components/sections";
@@ -18,12 +13,7 @@ export default function HomePage() {
       <Hero />
       <ProblemStatement />
       <CalculatorSection />
-      <PremierAndTools />
       <Pillars />
-      <Comparison />
-      <ChatSection />
-      <FounderQuote />
-      <MakingTheMove />
       <IbcSection />
       <FinalCta />
     </main>

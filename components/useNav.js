@@ -7,12 +7,12 @@ export const ROUTES = {
   home: "/",
   why: "/why-thrive",
   splits: "/the-split",
+  move: "/making-the-move",
+  founder: "/meet-the-broker",
   faq: "/faq",
   contact: "/contact",
-  // In-page anchors on the Home screen.
+  // In-page anchor on the Home screen (used by the hero + final CTA buttons).
   calculator: "/#calc-anchor",
-  move: "/#move-anchor",
-  founder: "/#founder-anchor",
 };
 
 // Derive the active nav id from the current pathname.
@@ -22,6 +22,10 @@ export function idFromPath(pathname) {
       return "why";
     case "/the-split":
       return "splits";
+    case "/making-the-move":
+      return "move";
+    case "/meet-the-broker":
+      return "founder";
     case "/faq":
       return "faq";
     case "/contact":
