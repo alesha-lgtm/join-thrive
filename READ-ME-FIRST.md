@@ -46,8 +46,29 @@ ever blocked, the fallback is: Alesha clicks "Push origin" in GitHub Desktop, or
 Posts to **Web3Forms** (no backend). Access key is in `components/ContactForm.jsx`
 (`WEB3FORMS_ACCESS_KEY`). Submissions email the inbox tied to the key. Verified working.
 
+## Site structure (updated 2026-06-22)
+The site is now **a lean home page plus dedicated pages** reached from the menu (not one long
+scroll).
+- **Home** (`app/page.jsx`), top to bottom: Hero, ProblemStatement ("The Honest Truth"),
+  CalculatorSection, PremierAndTools ("More Than a Split"), Pillars ("why agents move", ends with
+  a "See why agents move to Thrive" button to `/why-thrive`), IbcSection, FinalCta.
+- **Menu** (`components/Header.jsx` `links`): Why Thrive, The Split, Making the Move,
+  Meet the Broker, FAQ, plus the "Let's Talk" button. Calculator is NOT in the menu (it sits high
+  on the home page). All menu items route to real pages now (no in-page anchors), via `ROUTES` +
+  `idFromPath` in `components/useNav.js`. The `calculator` anchor (`/#calc-anchor`) still exists
+  for the hero / final-CTA "Run My Numbers" buttons.
+- `/making-the-move` = PageHeader + `MakingTheMove hideHeading` + FinalCta. `/meet-the-broker` =
+  PageHeader + FounderQuote + FinalCta. Both PageHeaders use a photo background.
+- Some sections appear on more than one page on purpose: PremierAndTools (home + why-thrive),
+  Comparison ("franchise vs Thrive", why-thrive only now), FounderQuote (meet-the-broker +
+  why-thrive), MakingTheMove (its own page).
+- **FinalCta takes an optional `script` prop** so the closing line differs per page (home keeps
+  "Your move, on your terms"; others have their own line). MakingTheMove takes `hideHeading`;
+  PageHeader takes `image` + optional `imagePosition` (e.g. "center 22%").
+
 ## File map
-- `app/` — routes: `page.jsx` (home), `why-thrive/`, `the-split/`, `faq/`, `contact/`;
+- `app/` — routes: `page.jsx` (home), `why-thrive/`, `the-split/`, `making-the-move/`,
+  `meet-the-broker/`, `faq/`, `contact/`;
   `layout.jsx` (metadata + Header/Footer; also holds the **Open Graph / Twitter link-preview**
   tags + `metadataBase`); `globals.css` (ALL design tokens + responsive classes: `.shell`,
   `.grid-*`, `.hero*`, `.headline-oneline`, `.cmp-*`, button/field styles).
@@ -59,9 +80,17 @@ Posts to **Web3Forms** (no backend). Access key is in `components/ContactForm.js
   + keyword router + honest fallback), `FaqAccordion.jsx`, `ContactForm.jsx`, `Icon.jsx`,
   `useNav.js`; `ui/` (Button, Eyebrow, Input).
 - `public/assets/` — `fonts/`, `logos/` (thrive marks, `tpc/tah/ibc`, leaf, favicon),
-  `images/` (`hero.jpg`, `alesha-broker.jpg` = founder photo, `ph-*.jpg` = page-header backgrounds,
-  **`og-preview.jpg`** = 1200x630 social/link-preview card; regenerate with `/tmp/make_og.py`-style
-  PIL script using the white logo + brand fonts if the card copy ever changes).
+  `images/` (`hero.jpg` = HOME hero (do not swap; owner wants it kept), `alesha-broker.jpg` =
+  founder photo in FounderQuote, `ph-*.jpg` = page-header backgrounds incl. `ph-meet.jpg` = Alesha
+  on the meet-the-broker header, `hero-realestate.jpg` = "I love real estate" cup, used as the
+  making-the-move header bg, `hero-houses.jpg` = "because I love houses" cup, optimized but
+  currently UNUSED (available for a future header), **`og-preview.jpg`** = 1200x630
+  social/link-preview card; regenerate with `/tmp/make_og.py`-style PIL script using the white logo
+  + brand fonts if the card copy ever changes).
+  NOTE: pasted/chat images are NOT on disk, can't be used directly. Source brand photos live under
+  `~/Documents/Thrive/08 Marketing & Brand/Thrive Brand Photos/` and
+  `~/Documents/Thrive/10 Headshots & Personal Photos/`; optimize with
+  `sips --resampleWidth <w> -s formatOptions <q> <src> --out public/assets/images/<name>.jpg`.
 
 ## Social / link preview (set 2026-06-20)
 When the live URL is shared (iMessage/texting, Facebook, LinkedIn, X, Slack, WhatsApp) it renders
@@ -72,17 +101,21 @@ at build). Platforms cache previews hard — to force a refresh after a copy cha
 in Facebook's Sharing Debugger and LinkedIn's Post Inspector.
 
 ## Earnings calculator (`components/Calculator.jsx`)
-The single most important interactive piece. Structure as of 2026-06-20:
-- **Left "Your Production" card = the agent's CURRENT brokerage numbers:** closings/year, average
-  sale price, your commission rate (defaults 0, antitrust), current split % you keep, franchise fee
-  you pay now, **monthly fee you pay now**, **per-transaction fee you pay now**.
-- **`nowKeep`** (what you keep today) = GCI × split% − GCI × franchise% − monthlyNow×12 − perTxnNow×deals.
-- **`thriveKeep`** = GCI − company dollar (10% capped at $12,000) − $1,500 tech (125×12) − $250×deals-after-cap.
-- **Right navy results panel** shows three things, top to bottom: a Beyond Sweet **script header**
-  "What you take home" (bold, one line, nowrap), then **"At your brokerage today" $nowKeep**, then
-  **"At Thrive" $thriveKeep** (bigger), then the Thrive breakdown ("How the Thrive number works"),
-  then the **difference callout** (a bright sage gradient chip with shadow that intentionally pops):
-  the +$ amount and the line "That's how much more you would have made at Thrive."
+The single most important interactive piece. Structure as of 2026-06-22:
+- **Left "Your Production" card = the agent's CURRENT brokerage numbers:** "Number of closings last
+  year", "Sales volume last year", "Average commission rate last year" (defaults 0, antitrust),
+  "Your current split" (shown as a ratio like 70/30%, the first number is take-home), "Current
+  franchise fee", "Current monthly fee", "Current per-transaction fee".
+- **GCI is now `volume * rate`** (was `deals * price * rate`); there is no "average sale price"
+  input anymore.
+- **`nowKeep`** (what you keep today) = GCI times split%, less GCI times franchise%, less
+  monthlyNow times 12, less perTxnNow times deals.
+- **`thriveKeep`** = GCI, less company dollar (10% capped at $12,000), less $1,500 tech (125 times
+  12), less $250 times deals-after-cap.
+- **Right navy results panel**: a Beyond Sweet **script header** "What you take home", then
+  **"At your current brokerage" $nowKeep**, then **"At Thrive" $thriveKeep** (bigger), the Thrive
+  breakdown ("How the Thrive number works"), then the **difference callout** (bright sage gradient
+  chip): the plus amount and "That's how much more you would have made at Thrive."
 - The $250/transaction fee only appears (math + line item) once GCI passes $120,000 (the cap point).
   Do NOT remove it when editing the panel.
 
