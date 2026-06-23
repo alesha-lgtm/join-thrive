@@ -13,7 +13,7 @@ export default function MeetTheBrokerPage() {
         intro="Alesha Oppatt founded Thrive so experienced agents could keep more of what they earn, with real, on-site support on every deal. Here's her note to you."
       />
       <FounderQuote />
-      <FinalCta />
+      <FinalCta script="Let's talk, broker to agent" />
     </main>
   );
 }

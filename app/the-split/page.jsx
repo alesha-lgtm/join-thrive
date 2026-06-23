@@ -145,7 +145,7 @@ export default function TheSplitPage() {
         </div>
         <Calculator />
       </Wrap>
-      <FinalCta />
+      <FinalCta script="Cap early, keep the rest" />
     </main>
   );
 }

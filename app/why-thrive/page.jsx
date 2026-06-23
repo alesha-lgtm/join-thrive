@@ -96,7 +96,7 @@ export default function WhyThrivePage() {
       <PremierAndTools />
       <Comparison />
       <FounderQuote />
-      <FinalCta />
+      <FinalCta script="All the upside, none of the cut" />
     </main>
   );
 }

@@ -18,7 +18,7 @@ export default function FaqPage() {
         <FaqAccordion />
       </Wrap>
       <ChatSection />
-      <FinalCta />
+      <FinalCta script="No question off the table" />
     </main>
   );
 }

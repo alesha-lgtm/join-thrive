@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Button from "./ui/Button";
 import Eyebrow from "./ui/Eyebrow";
 import Icon, { ICONS } from "./Icon";
@@ -105,22 +104,8 @@ export function PageHeader({ eyebrow, title, intro, image }) {
   );
 }
 
-const HERO_IMAGES = [
-  "/assets/images/hero-realestate.jpg",
-  "/assets/images/hero-houses.jpg",
-];
-
 export function Hero() {
   const nav = useNav();
-  const [active, setActive] = useState(0);
-  useEffect(() => {
-    if (HERO_IMAGES.length < 2) return;
-    const id = setInterval(
-      () => setActive((a) => (a + 1) % HERO_IMAGES.length),
-      6500
-    );
-    return () => clearInterval(id);
-  }, []);
   return (
     <section
       className="hero"
@@ -131,23 +116,19 @@ export function Hero() {
         background: "var(--charcoal)",
       }}
     >
-      {HERO_IMAGES.map((src, i) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          key={src}
-          src={src}
-          alt=""
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: i === active ? 0.42 : 0,
-            transition: "opacity 1.4s var(--ease-standard)",
-          }}
-        />
-      ))}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/assets/images/hero.jpg"
+        alt=""
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          opacity: 0.42,
+        }}
+      />
       <div
         style={{
           position: "absolute",
@@ -1248,7 +1229,7 @@ export function IbcSection() {
   );
 }
 
-export function FinalCta() {
+export function FinalCta({ script = "Your move, on your terms" }) {
   const nav = useNav();
   return (
     <Wrap bg="var(--paper)" py={104}>
@@ -1283,7 +1264,7 @@ export function FinalCta() {
               margin: "0 0 10px",
             }}
           >
-            Your move, on your terms
+            {script}
           </p>
           <h2
             style={{

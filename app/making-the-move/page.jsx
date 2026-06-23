@@ -13,7 +13,7 @@ export default function MakingTheMovePage() {
         intro="Switching sounds harder than it is. Here's how Thrive makes the transition simple, step by step, with your broker right beside you the whole way."
       />
       <MakingTheMove hideHeading />
-      <FinalCta />
+      <FinalCta script="The move is the easy part" />
     </main>
   );
 }
