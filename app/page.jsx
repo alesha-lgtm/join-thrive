@@ -3,6 +3,7 @@ import {
   ProblemStatement,
   CalculatorSection,
   Pillars,
+  PremierAndTools,
   IbcSection,
   FinalCta,
 } from "@/components/sections";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <ProblemStatement />
       <CalculatorSection />
       <Pillars />
+      <PremierAndTools />
       <IbcSection />
       <FinalCta />
     </main>
