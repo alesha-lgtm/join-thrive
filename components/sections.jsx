@@ -1057,7 +1057,8 @@ export function MakingTheMove() {
     "You'll never feel like you're doing it alone",
   ];
   return (
-    <Wrap bg="var(--paper)" py={104}>
+    <Wrap bg="var(--paper)" py={104} style={{ scrollMarginTop: 80 }}>
+      <div id="move-anchor" style={{ position: "relative", top: -60 }} />
       <div className="grid-split" style={{ gap: 56, alignItems: "center" }}>
         <div>
           <Eyebrow>Making the Move</Eyebrow>

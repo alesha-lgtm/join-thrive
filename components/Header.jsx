@@ -24,6 +24,7 @@ export default function Header() {
     ["why", "Why Thrive"],
     ["splits", "The Split"],
     ["calculator", "Calculator"],
+    ["move", "Making the Move"],
     ["faq", "FAQ"],
   ];
 

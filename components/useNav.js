@@ -9,8 +9,9 @@ export const ROUTES = {
   splits: "/the-split",
   faq: "/faq",
   contact: "/contact",
-  // "calculator" is an in-page anchor on the Home screen.
+  // In-page anchors on the Home screen.
   calculator: "/#calc-anchor",
+  move: "/#move-anchor",
 };
 
 // Derive the active nav id from the current pathname.
@@ -34,23 +35,25 @@ export function useNav() {
   const pathname = usePathname();
 
   return (id) => {
-    if (id === "calculator") {
-      // If already home, just smooth-scroll to the calculator.
-      if (pathname === "/") {
+    const route = ROUTES[id] || "/";
+    const hashIndex = route.indexOf("#");
+    // In-page anchors (e.g. /#calc-anchor, /#move-anchor): smooth-scroll if we're
+    // already on that page, otherwise navigate there first, then scroll.
+    if (hashIndex !== -1) {
+      const path = route.slice(0, hashIndex) || "/";
+      const anchorId = route.slice(hashIndex + 1);
+      const scroll = () =>
         document
-          .getElementById("calc-anchor")
+          .getElementById(anchorId)
           ?.scrollIntoView({ behavior: "smooth" });
-        return;
+      if (pathname === path) {
+        scroll();
+      } else {
+        router.push(route);
+        setTimeout(scroll, 150);
       }
-      router.push("/#calc-anchor");
-      // After navigation, ensure we land on the calculator.
-      setTimeout(() => {
-        document
-          .getElementById("calc-anchor")
-          ?.scrollIntoView({ behavior: "smooth" });
-      }, 150);
       return;
     }
-    router.push(ROUTES[id] || "/");
+    router.push(route);
   };
 }
