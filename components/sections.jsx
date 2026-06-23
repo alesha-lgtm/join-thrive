@@ -354,7 +354,7 @@ export function Pillars() {
     ],
   ];
   return (
-    <Wrap bg="var(--cream)" py={104}>
+    <Wrap bg="var(--paper)" py={104}>
       <div style={{ textAlign: "center", marginBottom: 64 }}>
         <Eyebrow align="center">Why Agents Move to Thrive</Eyebrow>
         <h2
@@ -699,7 +699,7 @@ export function Comparison() {
 
 export function CalculatorSection() {
   return (
-    <Wrap bg="var(--paper)" py={104} style={{ scrollMarginTop: 80 }}>
+    <Wrap bg="var(--cream)" py={104} style={{ scrollMarginTop: 80 }}>
       <div id="calc-anchor" style={{ position: "relative", top: -60 }} />
       <div style={{ textAlign: "center", marginBottom: 56 }}>
         <Eyebrow align="center">Run Your Numbers</Eyebrow>
@@ -738,7 +738,7 @@ export function CalculatorSection() {
 
 export function ChatSection() {
   return (
-    <Wrap bg="var(--cream)" py={104}>
+    <Wrap bg="var(--sand)" py={104}>
       <div className="grid-split" style={{ gap: 56, alignItems: "center" }}>
         <div>
           <Eyebrow>Still Have Questions?</Eyebrow>

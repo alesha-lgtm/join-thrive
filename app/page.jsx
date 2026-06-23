@@ -17,10 +17,10 @@ export default function HomePage() {
     <main>
       <Hero />
       <ProblemStatement />
+      <CalculatorSection />
       <PremierAndTools />
       <Pillars />
       <Comparison />
-      <CalculatorSection />
       <ChatSection />
       <FounderQuote />
       <MakingTheMove />
