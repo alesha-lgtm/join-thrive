@@ -14,8 +14,8 @@ export default function HomePage() {
       <Hero />
       <ProblemStatement />
       <CalculatorSection />
-      <Pillars />
       <PremierAndTools />
+      <Pillars />
       <IbcSection />
       <FinalCta />
     </main>
