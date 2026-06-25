@@ -254,6 +254,89 @@ export function Hero() {
   );
 }
 
+export function VideoSection() {
+  const nav = useNav();
+  return (
+    <Wrap bg="var(--sand)" py={88}>
+      <div
+        style={{
+          maxWidth: 940,
+          margin: "0 auto",
+          display: "flex",
+          gap: 56,
+          alignItems: "center",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
+        <div style={{ flex: "1 1 360px", minWidth: 0 }}>
+          <Eyebrow>Watch</Eyebrow>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 400,
+              fontSize: "clamp(28px,3.2vw,40px)",
+              lineHeight: 1.14,
+              color: "var(--ink-600)",
+              margin: "16px 0 0",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            The reason most agents stay.
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: 17,
+              lineHeight: 1.75,
+              color: "var(--text-body)",
+              margin: "18px 0 0",
+              maxWidth: 420,
+            }}
+          >
+            Most agents already know they&apos;re overpaying. They stay anyway,
+            because leaving feels harder than it is. Here&apos;s the honest
+            reason, and why the move is simpler than you think.
+          </p>
+          <div style={{ marginTop: 26 }}>
+            <Button variant="primary" onClick={() => nav("contact")}>
+              Start a Confidential Conversation
+            </Button>
+          </div>
+        </div>
+        <div style={{ flex: "0 0 auto", width: "100%", maxWidth: 320 }}>
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "9 / 16",
+              borderRadius: 12,
+              overflow: "hidden",
+              boxShadow: "0 18px 50px rgba(44,55,67,0.22)",
+              background: "var(--ink-600)",
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/VdgO7m0HLnM"
+              title="The Reason Most Agents Stay"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                border: 0,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </Wrap>
+  );
+}
+
 export function ProblemStatement() {
   return (
     <Wrap bg="var(--paper)" py={104}>
@@ -1193,12 +1276,20 @@ export function IbcSection() {
           justifyContent: "center",
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assets/logos/ibc.png"
-          alt="Independent Brokerage Collective"
-          style={{ width: 200, height: "auto", flexShrink: 0 }}
-        />
+        <a
+          href="https://independentbrokeragecollective.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit the Independent Brokerage Collective"
+          style={{ flexShrink: 0, display: "block", lineHeight: 0 }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/logos/ibc.png"
+            alt="Independent Brokerage Collective"
+            style={{ width: 200, height: "auto" }}
+          />
+        </a>
         <div style={{ flex: "1 1 380px", minWidth: 0 }}>
           <Eyebrow>An Independent Brokerage, Not Alone</Eyebrow>
           <p

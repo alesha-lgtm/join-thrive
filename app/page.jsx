@@ -1,6 +1,7 @@
 import {
   Hero,
   ProblemStatement,
+  VideoSection,
   CalculatorSection,
   Pillars,
   PremierAndTools,
@@ -13,6 +14,7 @@ export default function HomePage() {
     <main>
       <Hero />
       <ProblemStatement />
+      <VideoSection />
       <CalculatorSection />
       <PremierAndTools />
       <Pillars />
