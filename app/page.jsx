@@ -14,11 +14,11 @@ export default function HomePage() {
     <main>
       <Hero />
       <ProblemStatement />
-      <VideoSection />
       <CalculatorSection />
       <PremierAndTools />
       <Pillars />
       <IbcSection />
+      <VideoSection />
       <FinalCta />
     </main>
   );
