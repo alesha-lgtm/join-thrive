@@ -37,10 +37,45 @@ export const metadata = {
   },
 };
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "@id": `${SITE_URL}/#organization`,
+  name: "Thrive Real Estate Brokers",
+  description: DESCRIPTION,
+  url: SITE_URL,
+  sameAs: ["https://thriverealestatebrokers.com"],
+  areaServed: [
+    { "@type": "City", name: "Greenville, South Carolina" },
+    { "@type": "AdministrativeArea", name: "Upstate South Carolina" },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Greenville",
+    addressRegion: "SC",
+    addressCountry: "US",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Alesha Oppatt",
+    jobTitle: "Broker-in-Charge",
+  },
+  knowsAbout: [
+    "Real estate license transfer",
+    "Hanging your real estate license",
+    "Real estate brokerage",
+    "Real estate commission splits",
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
         <Header />
         {children}
         <Footer />

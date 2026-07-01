@@ -1,0 +1,39 @@
+# Thrive Real Estate Brokers — Join Thrive
+# All crawlers welcome, including AI search bots, so Thrive can be
+# cited when agents ask where to hang or move their license.
+
+User-agent: *
+Allow: /
+
+# AI search + assistant crawlers (explicitly allowed)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://joinus.thriverealestatebrokers.com/sitemap.xml
