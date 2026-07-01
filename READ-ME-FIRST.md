@@ -135,6 +135,25 @@ The single most important interactive piece. Structure as of 2026-06-22:
   the footer mark big and the subline legible. Both use the white-transparent PNG (header swaps to
   `thrive-logo-ink.png` once the sticky header turns opaque on scroll / non-home pages).
 
+## AI search visibility (AEO/GEO, set 2026-07-01)
+Goal: get Thrive cited when agents ask AI (ChatGPT, Perplexity, Google AI Overviews, Claude)
+"where should I hang / move my real estate license" in Greenville / the Upstate.
+On-site foundation shipped:
+- `public/robots.txt` explicitly allows AI crawlers (GPTBot, ChatGPT-User, OAI-SearchBot,
+  PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended, Applebot-Extended) + points to the sitemap.
+- `public/sitemap.xml` (all 7 routes, trailing slashes to match `trailingSlash: true`).
+- `public/llms.txt` = plain-text brief for AI systems (what Thrive is, the model, license-move, page links).
+- **Schema/JSON-LD:** `RealEstateAgent` org schema site-wide in `app/layout.jsx` (`orgSchema`, Greenville +
+  Upstate `areaServed`, founder Alesha, `knowsAbout` license transfer); `FAQPage` schema on `/faq`
+  (`faqSchema` in `app/faq/page.jsx`).
+- FAQ data now lives in `components/faqData.js` (plain module) so the server-rendered FAQ schema and the
+  client `FaqAccordion` share ONE array. Do NOT move `faqs` back into the "use client" accordion, it breaks
+  the server `.map()` for the schema. First two FAQ entries are query-matched ("where should I hang/move my
+  license") on purpose, they feed both the visible accordion and the schema.
+- **Off-site (owner action, matters most, ~6.5x more AI citations than own site):** create a Google
+  Business Profile for Thrive; answer license-move questions authentically on Reddit (r/realtors + Upstate
+  subs); get listed on brokerage/agent directories. On-site is the prerequisite; off-site is what moves the needle.
+
 ## Build note
 `next.config.mjs` gates static export behind `BUILD_EXPORT=true` (only `npm run build` sets it).
 `next dev` runs in normal mode so the local preview stays reliable. Vercel builds Next.js
