@@ -7,7 +7,7 @@ read this file first, then continue the work.
 Agent-recruiting site for **Thrive Real Estate Brokers** (boutique brokerage, Greenville /
 Upstate SC). Its job: convince experienced agents to switch to Thrive, walk them through the
 commission model, let them calculate what they'd keep, and invite a confidential conversation.
-Next.js (App Router) + React, plain JSX. Lives at `~/join-thrive`.
+Next.js (App Router) + React, plain JSX. Lives at `~/Documents/Claude/Projects/join-thrive`.
 
 ## It is LIVE
 - **Production:** https://joinus.thriverealestatebrokers.com
@@ -18,12 +18,12 @@ Next.js (App Router) + React, plain JSX. Lives at `~/join-thrive`.
 ## Run it locally (to preview changes)
 - Registered in `~/.claude/launch.json` as **`join-thrive`** (port 3100). Use the preview tool:
   `preview_start` name `join-thrive`, then open http://localhost:3100.
-- Or: `cd ~/join-thrive && npm run dev`.
+- Or: `cd ~/Documents/Claude/Projects/join-thrive && npm install && npm run dev` (node_modules was removed in the 2026-09-14 move; reinstall once).
 - If the preview ever shows blank/unstyled after a server restart, reload the full URL
   (`location.replace('http://localhost:3100/')`). It's a stale preview tab, not a code bug.
 
 ## How to deploy a change (THIS is how it goes live)
-1. Edit code in `~/join-thrive`.
+1. Edit code in `~/Documents/Claude/Projects/join-thrive`.
 2. `git add -A && git commit -m "..."` (end the message with the Co-Authored-By trailer).
 3. `git push origin main`
 4. Vercel auto-builds; the live site updates in ~1 minute.
