@@ -6,6 +6,7 @@ import Icon, { ICONS } from "./Icon";
 import Calculator from "./Calculator";
 import AskThrive from "./AskThrive";
 import { useNav } from "./useNav";
+import { usePersonalVisitor } from "./usePersonalVisitor";
 
 export function Wrap({ children, bg, py = 96, style }) {
   return (
@@ -114,6 +115,7 @@ export function PageHeader({
 
 export function Hero() {
   const nav = useNav();
+  const visitor = usePersonalVisitor();
   return (
     <section
       className="hero"
@@ -161,6 +163,20 @@ export function Hero() {
               A Boutique Brokerage · Greenville, SC
             </span>
           </div>
+          {visitor && (
+            <p
+              style={{
+                fontFamily: "var(--font-script)",
+                fontWeight: 400,
+                fontSize: "clamp(34px, 4vw, 48px)",
+                lineHeight: 1.1,
+                color: "var(--sage-300)",
+                margin: "0 0 10px",
+              }}
+            >
+              Hi {visitor.firstName},
+            </p>
+          )}
           <h1
             style={{
               fontFamily: "var(--font-serif)",

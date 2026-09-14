@@ -46,6 +46,15 @@ ever blocked, the fallback is: Alesha clicks "Push origin" in GitHub Desktop, or
 Posts to **Web3Forms** (no backend). Access key is in `components/ContactForm.jsx`
 (`WEB3FORMS_ACCESS_KEY`). Submissions email the inbox tied to the key. Verified working.
 
+## Visitor tracking + personal links (added 2026-09-14)
+- **Vercel Web Analytics:** `<Analytics />` in `app/layout.jsx` (`@vercel/analytics`). Anonymous
+  counts; view in Vercel dashboard → join-thrive → Analytics (Alesha must click Enable there once).
+- **Personal links:** `?r=jane-smith` → home hero shows "Hi Jane," (script font) and Alesha gets a
+  Web3Forms email "Jane Smith opened the Join Thrive site", once per browser session. Logic in
+  `components/usePersonalVisitor.js`; name is remembered in localStorage (`thrive_ref`) across pages.
+  Alerts share the Web3Forms free quota (~250/mo) with the contact form. Testing locally with `?r=`
+  sends a REAL email; set localStorage `thrive_ref` instead to preview the greeting silently.
+
 ## Site structure (updated 2026-06-22)
 The site is now **a lean home page plus dedicated pages** reached from the menu (not one long
 scroll).
