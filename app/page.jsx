@@ -4,6 +4,7 @@ import {
   VideoSection,
   CalculatorSection,
   Pillars,
+  Culture,
   PremierAndTools,
   IbcSection,
   FinalCta,
@@ -17,6 +18,7 @@ export default function HomePage() {
       <CalculatorSection />
       <PremierAndTools />
       <Pillars />
+      <Culture />
       <IbcSection />
       <VideoSection />
       <FinalCta />

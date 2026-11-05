@@ -34,6 +34,10 @@ export const faqs = [
     "Hands-on support. Alesha, the Broker-in-Charge, and the team are reachable and involved: contract guidance, negotiation help, and a calm second opinion when a deal gets complicated.",
   ],
   [
+    "What is the culture like at Thrive?",
+    "Small, connected, and honest. We meet every month to work on contracts, tools, and real client conversations. We talk about losses as well as wins, and agents help shape the tools we build. You run your own business, with people around you who want to see it grow.",
+  ],
+  [
     "How hard is it to move my license?",
     "Alesha has done it herself, and so have the other agents at Thrive. We'll walk you through it, before and during your transition. Easy peasy.",
   ],

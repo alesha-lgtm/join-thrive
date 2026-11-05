@@ -2,6 +2,7 @@ import {
   Wrap,
   PageHeader,
   PremierAndTools,
+  Culture,
   Comparison,
   FounderQuote,
   FinalCta,
@@ -14,7 +15,7 @@ export const metadata = {
 const benefits = [
   [
     "Keep more of every check",
-    "90/10 to a low $12,000 cap, then just $250 a transaction. No franchise fees, no big-name splits skimming the top, and we don't spend your earnings on galas or self-congratulation.",
+    "90/10 to a low $12,000 cap, then just $250 a transaction. No franchise fees, no big-name splits skimming the top, and we don't spend your earnings on self-accolades.",
   ],
   [
     "You're more than a number",
@@ -26,7 +27,7 @@ const benefits = [
   ],
   [
     "A relationship-based brokerage",
-    "We grow by growing your relationships, nurturing your clients for life so the referrals never stop. Your people work with you for you, not for a name on a sign.",
+    "We grow by growing your relationships, nurturing your clients for life so the referrals never stop. Your clients choose you, not a name on a sign.",
   ],
   [
     "Freedom to run your business",
@@ -93,6 +94,7 @@ export default function WhyThrivePage() {
           ))}
         </div>
       </Wrap>
+      <Culture />
       <PremierAndTools />
       <Comparison />
       <FounderQuote />

@@ -235,7 +235,7 @@ export function Hero() {
         <div className="hero-stats-inner">
           {[
             ["90/10", "Your split"],
-            ["$12K", "Annual cap, then ~100% (less a flat $250 per deal)"],
+            ["$12K", "Annual cap, then just $250 per deal"],
             ["$125/mo", "Flat tech fee, E&O included"],
             ["$0", "Desk fees · royalties · franchise cut"],
           ].map(([v, l], i) => (
@@ -369,8 +369,7 @@ export function ProblemStatement() {
             letterSpacing: "-0.01em",
           }}
         >
-          You&apos;ve worked hard to build your business. Why are you giving so
-          much of it away?
+          Why are you giving so much of your business away?
         </h2>
         <p
           style={{
@@ -410,7 +409,7 @@ export function ProblemStatement() {
           }}
         >
           You&apos;ve built a business you&apos;re proud of. Now imagine keeping
-          more of your hard-earned money and your independence.
+          more of your money and your independence.
         </p>
         <p
           style={{
@@ -433,7 +432,7 @@ export function Pillars() {
     [
       ICONS.trend,
       "You keep more of your money",
-      "90/10 from day one, a low $12,000 annual cap, then just $250 a transaction. No franchise fees, no big-name splits, and we don't spend your money on galas and self-congratulation. We keep more in your pocket and a great culture intact.",
+      "90/10 from day one, a low $12,000 annual cap, then just $250 a transaction. No franchise fees, no big-name splits, and we don't spend your money on self-accolades. We keep more in your pocket and a great culture intact.",
     ],
     [
       ICONS.shield,
@@ -453,7 +452,7 @@ export function Pillars() {
     [
       ICONS.send,
       "A relationship-based brokerage",
-      "We grow by growing your relationships, nurturing your clients for life so the referrals keep coming. Your people work with you for you, not for a logo on a sign.",
+      "We grow by growing your relationships, nurturing your clients for life so the referrals keep coming. Your clients choose you, not a logo on a sign.",
     ],
     [
       ICONS.arrow,
@@ -537,6 +536,106 @@ export function Pillars() {
         <Button variant="secondary" onClick={() => nav("why")}>
           See why agents move to Thrive
         </Button>
+      </div>
+    </Wrap>
+  );
+}
+
+export function Culture() {
+  const items = [
+    [
+      "We meet every month",
+      "We sit down together once a month for contracts, tools, and what's changing in our market. You leave with something you can use that week.",
+    ],
+    [
+      "We practice the hard talks",
+      "We role-play real objections and real client conversations, so you've already said the words before you need them.",
+    ],
+    [
+      "We share the losses too",
+      "Wins get celebrated. Losses get talked about. Nobody has to pretend every deal went great, and everybody learns from it.",
+    ],
+    [
+      "Your ideas shape what we build",
+      "Tell us what would make your business easier, and we'll work on it. Our tools keep getting better because our agents speak up.",
+    ],
+    [
+      "We take care of clients together",
+      "Client appreciation events give your people a reason to hear from you long after closing, and you don't have to plan them alone.",
+    ],
+    [
+      "We say thank you",
+      "Agent appreciation is part of how we run. Good work gets noticed here, and your broker will tell you so.",
+    ],
+  ];
+  return (
+    <Wrap bg="var(--sage-50)" py={104}>
+      <div style={{ textAlign: "center", marginBottom: 56 }}>
+        <Eyebrow align="center">Our Culture</Eyebrow>
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: 400,
+            fontSize: "clamp(30px,3.6vw,44px)",
+            color: "var(--ink-600)",
+            margin: "18px auto 14px",
+            maxWidth: 720,
+            lineHeight: 1.12,
+          }}
+        >
+          Independent doesn&apos;t mean on your own.
+        </h2>
+        <p
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 16,
+            lineHeight: 1.7,
+            color: "var(--text-body)",
+            maxWidth: 600,
+            margin: "0 auto",
+          }}
+        >
+          A good split gets your attention. The people around you are why
+          you stay. Here&apos;s what it&apos;s like to work here.
+        </p>
+      </div>
+      <div className="grid-3" style={{ gap: 24 }}>
+        {items.map(([t, d], i) => (
+          <div
+            key={i}
+            className="lift"
+            style={{
+              background: "var(--white)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "var(--radius-sm)",
+              padding: "30px 28px",
+              boxShadow: "var(--shadow-xs)",
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 400,
+                fontSize: 21,
+                color: "var(--ink-600)",
+                margin: "0 0 10px",
+              }}
+            >
+              {t}
+            </h3>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 14.5,
+                lineHeight: 1.7,
+                color: "var(--text-body)",
+                margin: 0,
+              }}
+            >
+              {d}
+            </p>
+          </div>
+        ))}
       </div>
     </Wrap>
   );
@@ -975,7 +1074,7 @@ export function FounderQuote() {
               never feel like one of two hundred names on a roster. You get
               on-site support, custom tools you&apos;ll actually use, and the
               freedom to run your business your way. We don&apos;t spend your
-              money on fancy galas or self-congratulation. We put it back in your
+              money on self-accolades. We put it back in your
               pocket and into a culture that has your back. We grow by growing
               your relationships, so your clients keep coming back and keep
               sending their friends. You&apos;re more than a number here, and you

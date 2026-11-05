@@ -35,7 +35,7 @@ export default function Footer() {
                 maxWidth: 360,
               }}
             >
-              You worked hard for your money. Keep more of it.
+              Keep more of what you earn.
             </p>
             <Button variant="primary" onClick={() => nav("contact")}>
               Start a Confidential Conversation
