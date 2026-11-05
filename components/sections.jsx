@@ -545,11 +545,11 @@ export function Culture() {
   const items = [
     [
       "We meet every month",
-      "We sit down together once a month for contracts, tools, and what's changing in our market. You leave with something you can use that week.",
+      "We get together once a month, in person or online, to cover contracts, tools, and what's changing in our market. You leave with something you can use that week.",
     ],
     [
-      "We practice the hard talks",
-      "We role-play real objections and real client conversations, so you've already said the words before you need them.",
+      "We work on what to say",
+      "Say this, not that. We go over the words for real objections and real client conversations, so you're ready when they come up.",
     ],
     [
       "We share the losses too",
@@ -1035,7 +1035,7 @@ export function FounderQuote() {
                 position: "absolute",
                 inset: 0,
                 background:
-                  "linear-gradient(90deg, rgba(46,61,77,0) 55%, rgba(46,61,77,1) 100%)",
+                  "linear-gradient(90deg, rgba(46,61,77,0) 82%, rgba(46,61,77,1) 100%)",
               }}
             />
           </div>
