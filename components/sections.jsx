@@ -188,11 +188,11 @@ export function Hero() {
               margin: "0 0 24px",
             }}
           >
-            Great culture.
+            You&apos;ve given
             <br />
-            Low fees.
+            this business
             <br />
-            <span style={{ color: "var(--sage-300)" }}>Room to thrive.</span>
+            <span style={{ color: "var(--sage-300)" }}>your heart.</span>
           </h1>
           <p
             style={{
@@ -201,13 +201,24 @@ export function Hero() {
               lineHeight: 1.7,
               color: "rgba(251,250,246,0.86)",
               maxWidth: 560,
-              margin: "0 0 36px",
+              margin: "0 0 14px",
             }}
           >
-            Thrive is a place for experienced Upstate agents who want to enjoy
-            the people they work with and keep more of what they earn. You get a
-            90/10 split, a low $12,000 annual cap, and a broker who&apos;s with
-            you on every deal.
+            The missed dinners. The late-night calls. The clients you still think
+            about years later. You deserve a brokerage that gives back, with
+            people who care about you, a great culture, and low fees. That&apos;s
+            why I built Thrive.
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: 14,
+              lineHeight: 1.5,
+              color: "var(--sage-300)",
+              margin: "0 0 32px",
+            }}
+          >
+            Alesha Oppatt, Broker-in-Charge
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
             <Button variant="primary" size="lg" onClick={() => nav("contact")}>
