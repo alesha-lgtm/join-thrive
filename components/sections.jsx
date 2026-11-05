@@ -404,6 +404,7 @@ export function ProblemStatement() {
             color: "var(--text-body)",
             margin: "20px auto 0",
             maxWidth: 640,
+            textWrap: "balance",
           }}
         >
           Too many good agents pay high splits, monthly fees, and royalties,
