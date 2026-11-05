@@ -1260,15 +1260,48 @@ export function PremierAndTools() {
     "New tools added all the time",
   ];
   return (
-    <Wrap bg="var(--sand)" py={104}>
+    <section
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        background: "var(--charcoal)",
+        padding: "104px 0",
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/assets/images/bg-laptop.jpg"
+        alt=""
+        loading="lazy"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          opacity: 0.3,
+          filter: "blur(2px)",
+        }}
+      />
+      <div className="shell" style={{ position: "relative" }}>
       <div style={{ textAlign: "center", marginBottom: 56 }}>
-        <Eyebrow align="center">More Than a Split</Eyebrow>
+        <div
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 11,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--sage-300)",
+          }}
+        >
+          More Than a Split
+        </div>
         <h2
           style={{
             fontFamily: "var(--font-serif)",
             fontWeight: 400,
             fontSize: "clamp(30px,3.6vw,44px)",
-            color: "var(--ink-600)",
+            color: "var(--paper)",
             margin: "18px auto 0",
             maxWidth: 720,
             lineHeight: 1.12,
@@ -1403,7 +1436,8 @@ export function PremierAndTools() {
           </p>
         </div>
       </div>
-    </Wrap>
+      </div>
+    </section>
   );
 }
 

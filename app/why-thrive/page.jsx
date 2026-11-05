@@ -46,7 +46,8 @@ export default function WhyThrivePage() {
         eyebrow="Why Thrive"
         title="Everything a big firm gives you, without what it takes from you."
         intro="Thrive pairs real broker support and a trusted local name with the economics of working for yourself, purpose-built for experienced Upstate producers."
-        image="/assets/images/ph-why.jpg"
+        image="/assets/images/ph-why-team.jpg"
+        imagePosition="center 38%"
       />
       <Wrap bg="var(--paper)" py={88}>
         <div className="grid-3" style={{ gap: 24 }}>
