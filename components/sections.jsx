@@ -188,11 +188,11 @@ export function Hero() {
               margin: "0 0 24px",
             }}
           >
-            You worked hard
+            Great culture.
             <br />
-            for your money.
+            Low fees.
             <br />
-            <span style={{ color: "var(--sage-300)" }}>Keep more of it.</span>
+            <span style={{ color: "var(--sage-300)" }}>Room to thrive.</span>
           </h1>
           <p
             style={{
@@ -204,9 +204,10 @@ export function Hero() {
               margin: "0 0 36px",
             }}
           >
-            Thrive is built for experienced Upstate agents who are done
-            overpaying. A 90/10 split, a low $12,000 annual cap, and a hands-on
-            broker on every deal, without the franchise machine taking its cut.
+            Thrive is a place for experienced Upstate agents who want to enjoy
+            the people they work with and keep more of what they earn. You get a
+            90/10 split, a low $12,000 annual cap, and a broker who&apos;s with
+            you on every deal.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
             <Button variant="primary" size="lg" onClick={() => nav("contact")}>
