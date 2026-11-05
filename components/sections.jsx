@@ -418,7 +418,7 @@ export function ProblemStatement() {
             lineHeight: 1.75,
             color: "var(--text-body)",
             margin: "10px auto 0",
-            maxWidth: 1000,
+            maxWidth: 1100,
           }}
         >
           You&apos;ve built something you&apos;re proud of. You should keep more
