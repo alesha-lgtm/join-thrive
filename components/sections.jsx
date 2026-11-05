@@ -367,8 +367,8 @@ export function VideoSection() {
 
 export function ProblemStatement() {
   return (
-    <Wrap bg="var(--paper)" py={104}>
-      <div style={{ maxWidth: 880, margin: "0 auto", textAlign: "center" }}>
+    <Wrap bg="var(--paper)" py={64}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
         <Eyebrow align="center">The Honest Truth</Eyebrow>
         <h2
           style={{
@@ -390,8 +390,8 @@ export function ProblemStatement() {
             fontWeight: 500,
             lineHeight: 1.6,
             color: "var(--ink-600)",
-            margin: "22px auto 0",
-            maxWidth: 640,
+            margin: "16px auto 0",
+            maxWidth: 1000,
           }}
         >
           You shouldn&apos;t have to choose between real support and a fair split.
@@ -402,8 +402,8 @@ export function ProblemStatement() {
             fontSize: 17,
             lineHeight: 1.75,
             color: "var(--text-body)",
-            margin: "20px auto 0",
-            maxWidth: 640,
+            margin: "14px auto 0",
+            maxWidth: 1000,
             textWrap: "balance",
           }}
         >
@@ -417,8 +417,8 @@ export function ProblemStatement() {
             fontSize: 17,
             lineHeight: 1.75,
             color: "var(--text-body)",
-            margin: "18px auto 0",
-            maxWidth: 640,
+            margin: "10px auto 0",
+            maxWidth: 1000,
           }}
         >
           You&apos;ve built something you&apos;re proud of. You should keep more
@@ -429,7 +429,7 @@ export function ProblemStatement() {
             fontFamily: "var(--font-script)",
             fontSize: 32,
             color: "var(--sage-500)",
-            margin: "30px 0 0",
+            margin: "20px 0 0",
           }}
         >
           It&apos;s time for a brokerage built around you.
