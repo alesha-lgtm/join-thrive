@@ -381,7 +381,7 @@ export function ProblemStatement() {
             letterSpacing: "-0.01em",
           }}
         >
-          Why are you giving so much of your business away?
+          You love this work. Does your brokerage love you back?
         </h2>
         <p
           style={{
@@ -394,7 +394,7 @@ export function ProblemStatement() {
             maxWidth: 640,
           }}
         >
-          You&apos;re paying franchise prices for a desk you barely use.
+          You shouldn&apos;t have to choose between real support and a fair split.
         </p>
         <p
           style={{
@@ -406,9 +406,9 @@ export function ProblemStatement() {
             maxWidth: 640,
           }}
         >
-          High splits. Monthly fees that don&apos;t flex with your business.
-          Royalties skimmed off every check. A brokerage name that markets
-          itself instead of you.
+          Too many good agents pay high splits, monthly fees, and royalties,
+          then still can&apos;t reach their broker when a deal gets hard. That
+          never sat right with me.
         </p>
         <p
           style={{
@@ -420,8 +420,8 @@ export function ProblemStatement() {
             maxWidth: 640,
           }}
         >
-          You&apos;ve built a business you&apos;re proud of. Now imagine keeping
-          more of your money and your independence.
+          You&apos;ve built something you&apos;re proud of. You should keep more
+          of what it earns, and have people in your corner while you do.
         </p>
         <p
           style={{
