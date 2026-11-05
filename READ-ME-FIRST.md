@@ -59,8 +59,8 @@ Posts to **Web3Forms** (no backend). Access key is in `components/ContactForm.js
 The site is now **a lean home page plus dedicated pages** reached from the menu (not one long
 scroll).
 - **Home** (`app/page.jsx`), top to bottom: Hero, ProblemStatement ("The Honest Truth"),
-  CalculatorSection, PremierAndTools ("More Than a Split"), Pillars ("why agents move", ends with
-  a "See why agents move to Thrive" button to `/why-thrive`), IbcSection, FinalCta.
+  CalculatorSection, TeamBand, Culture, PremierAndTools ("More Than a Split", with a button to
+  `/why-thrive`), VideoSection, FinalCta. Pillars is no longer on any page; IbcSection is on `/why-thrive`.
 - **Menu** (`components/Header.jsx` `links`): Why Thrive, The Split, Making the Move,
   Meet the Broker, FAQ, plus the "Let's Talk" button. Calculator is NOT in the menu (it sits high
   on the home page). All menu items route to real pages now (no in-page anchors), via `ROUTES` +

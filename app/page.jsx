@@ -4,10 +4,8 @@ import {
   VideoSection,
   CalculatorSection,
   TeamBand,
-  Pillars,
   Culture,
   PremierAndTools,
-  IbcSection,
   FinalCta,
 } from "@/components/sections";
 
@@ -18,10 +16,8 @@ export default function HomePage() {
       <ProblemStatement />
       <CalculatorSection />
       <TeamBand />
-      <PremierAndTools />
-      <Pillars />
       <Culture />
-      <IbcSection />
+      <PremierAndTools showWhyLink />
       <VideoSection />
       <FinalCta />
     </main>

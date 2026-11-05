@@ -2,7 +2,7 @@ import {
   Wrap,
   PageHeader,
   PremierAndTools,
-  Culture,
+  IbcSection,
   Comparison,
   FounderQuote,
   FinalCta,
@@ -95,9 +95,9 @@ export default function WhyThrivePage() {
           ))}
         </div>
       </Wrap>
-      <Culture />
       <PremierAndTools />
       <Comparison />
+      <IbcSection />
       <FounderQuote />
       <FinalCta script="All the upside, none of the cut" />
     </main>

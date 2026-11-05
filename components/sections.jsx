@@ -1252,7 +1252,8 @@ export function FounderQuote() {
   );
 }
 
-export function PremierAndTools() {
+export function PremierAndTools({ showWhyLink = false }) {
+  const nav = useNav();
   const tools = [
     "Branded folders and pens",
     "Home-equity boxes",
@@ -1436,6 +1437,13 @@ export function PremierAndTools() {
           </p>
         </div>
       </div>
+      {showWhyLink && (
+        <div style={{ textAlign: "center", marginTop: 40 }}>
+          <Button variant="inverse" onClick={() => nav("why")}>
+            See why agents move to Thrive
+          </Button>
+        </div>
+      )}
       </div>
     </section>
   );
