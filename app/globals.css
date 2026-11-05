@@ -403,3 +403,14 @@ input[type="range"]::-moz-range-thumb {
   .cmp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .cmp-card { min-width: 600px; }
 }
+
+/* Page header with a clear photo beside the text */
+.ph-has-side { min-height: 600px; display: flex; align-items: center; }
+.ph-side { position: absolute; top: 0; right: 0; bottom: 0; width: 48%; }
+.ph-side-text { width: 100%; }
+.ph-side-text > * { max-width: 46% !important; }
+@media (max-width: 860px) {
+  .ph-has-side { display: block; min-height: 0; padding-bottom: 0 !important; }
+  .ph-side { position: relative; width: 100%; height: 420px; margin-top: 36px; }
+  .ph-side-text > * { max-width: none !important; }
+}

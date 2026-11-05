@@ -1,4 +1,4 @@
-import { PageHeader, FounderQuote, FinalCta } from "@/components/sections";
+import { PageHeader, FounderQuote, TeamPhoto, FinalCta } from "@/components/sections";
 
 export const metadata = {
   title: "Meet the Broker: You'll Always Have Your Broker",
@@ -11,11 +11,12 @@ export default function MeetTheBrokerPage() {
         eyebrow="Meet the Broker"
         title="You'll always have your broker."
         intro="Alesha Oppatt founded Thrive so experienced agents could keep more of what they earn, with real, on-site support on every deal. Here's her note to you."
-        image="/assets/images/ph-meet.jpg"
-        imagePosition="center 35%"
-        imageOpacity={0.5}
+        sideImage="/assets/images/ph-meet-team.jpg"
+        sideImageAlt="Alesha Oppatt, Broker-in-Charge, smiling in an open doorway"
+        sideImagePosition="center 42%"
       />
       <FounderQuote />
+      <TeamPhoto />
       <FinalCta script="Let's talk, broker to agent" />
     </main>
   );

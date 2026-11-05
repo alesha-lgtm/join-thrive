@@ -23,9 +23,13 @@ export function PageHeader({
   image,
   imagePosition,
   imageOpacity,
+  sideImage,
+  sideImageAlt = "",
+  sideImagePosition = "center",
 }) {
   return (
     <div
+      className={sideImage ? "ph-has-side" : undefined}
       style={{
         background: "var(--charcoal)",
         padding: "150px 0 72px",
@@ -59,13 +63,17 @@ export function PageHeader({
           />
         </>
       )}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/assets/logos/leaf-sage.png"
-        alt=""
-        style={{ position: "absolute", right: -30, top: -20, height: 200, opacity: 0.1 }}
-      />
-      <div className="shell" style={{ position: "relative" }}>
+      {!sideImage && (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/logos/leaf-sage.png"
+            alt=""
+            style={{ position: "absolute", right: -30, top: -20, height: 200, opacity: 0.1 }}
+          />
+        </>
+      )}
+      <div className={sideImage ? "shell ph-side-text" : "shell"} style={{ position: "relative" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
           <span style={{ width: 28, height: 1, background: "var(--sage-300)" }} />
           <span
@@ -109,6 +117,22 @@ export function PageHeader({
           </p>
         )}
       </div>
+      {sideImage && (
+        <div className="ph-side">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={sideImage}
+            alt={sideImageAlt}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: sideImagePosition,
+              display: "block",
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -554,6 +578,94 @@ export function Pillars() {
   );
 }
 
+export function TeamBand() {
+  return (
+    <section
+      style={{
+        position: "relative",
+        height: "clamp(380px, 46vw, 640px)",
+        overflow: "hidden",
+        background: "var(--charcoal)",
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/assets/images/team-table.jpg"
+        alt="Thrive agents working together around a table with their broker"
+        loading="lazy"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center 58%",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(180deg, rgba(44,55,67,0) 62%, rgba(44,55,67,0.92) 88%)",
+        }}
+      />
+      <p
+        style={{
+          position: "absolute",
+          left: 20,
+          right: 20,
+          bottom: 22,
+          textAlign: "center",
+          fontFamily: "var(--font-script)",
+          fontSize: "clamp(30px, 4vw, 52px)",
+          lineHeight: 1.1,
+          color: "var(--paper)",
+          margin: 0,
+        }}
+      >
+        There&apos;s a seat at this table for you.
+      </p>
+    </section>
+  );
+}
+
+export function TeamPhoto() {
+  return (
+    <Wrap bg="var(--sand)" py={88}>
+      <div style={{ textAlign: "center", marginBottom: 40 }}>
+        <Eyebrow align="center">The Thrive Team</Eyebrow>
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: 400,
+            fontSize: "clamp(30px,3.6vw,44px)",
+            color: "var(--ink-600)",
+            margin: "18px 0 0",
+            lineHeight: 1.12,
+          }}
+        >
+          The people in your corner.
+        </h2>
+      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/assets/images/team-group.jpg"
+        alt="The Thrive Real Estate Brokers team"
+        loading="lazy"
+        style={{
+          width: "100%",
+          maxWidth: 960,
+          display: "block",
+          margin: "0 auto",
+          borderRadius: "var(--radius-sm)",
+          boxShadow: "var(--shadow-sm)",
+        }}
+      />
+    </Wrap>
+  );
+}
+
 export function Culture() {
   const items = [
     [
@@ -583,34 +695,48 @@ export function Culture() {
   ];
   return (
     <Wrap bg="var(--sage-50)" py={104}>
-      <div style={{ textAlign: "center", marginBottom: 56 }}>
-        <Eyebrow align="center">Our Culture</Eyebrow>
-        <h2
+      <div className="grid-2" style={{ gap: 56, alignItems: "center", marginBottom: 56 }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/images/team-laughing.jpg"
+          alt="Thrive agents laughing together around a table with their broker"
+          loading="lazy"
           style={{
-            fontFamily: "var(--font-serif)",
-            fontWeight: 400,
-            fontSize: "clamp(30px,3.6vw,44px)",
-            color: "var(--ink-600)",
-            margin: "18px auto 14px",
-            maxWidth: 720,
-            lineHeight: 1.12,
+            width: "100%",
+            aspectRatio: "5 / 4",
+            objectFit: "cover",
+            display: "block",
+            borderRadius: "var(--radius-sm)",
+            boxShadow: "var(--shadow-sm)",
           }}
-        >
-          Independent doesn&apos;t mean on your own.
-        </h2>
-        <p
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: 16,
-            lineHeight: 1.7,
-            color: "var(--text-body)",
-            maxWidth: 600,
-            margin: "0 auto",
-          }}
-        >
-          A good split gets your attention. The people around you are why
-          you stay. Here&apos;s what it&apos;s like to work here.
-        </p>
+        />
+        <div>
+          <Eyebrow>Our Culture</Eyebrow>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 400,
+              fontSize: "clamp(30px,3.6vw,44px)",
+              color: "var(--ink-600)",
+              margin: "18px 0 14px",
+              lineHeight: 1.12,
+            }}
+          >
+            Independent doesn&apos;t mean on your own.
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: 16,
+              lineHeight: 1.7,
+              color: "var(--text-body)",
+              margin: 0,
+            }}
+          >
+            A good split gets your attention. The people around you are why
+            you stay. Here&apos;s what it&apos;s like to work here.
+          </p>
+        </div>
       </div>
       <div className="grid-3" style={{ gap: 24 }}>
         {items.map(([t, d], i) => (
@@ -1456,7 +1582,7 @@ export function IbcSection() {
   );
 }
 
-export function FinalCta({ script = "Your move, on your terms" }) {
+export function FinalCta({ script = "Your move, on your terms", image = null }) {
   const nav = useNav();
   return (
     <Wrap bg="var(--paper)" py={104}>
@@ -1470,6 +1596,25 @@ export function FinalCta({ script = "Your move, on your terms" }) {
           overflow: "hidden",
         }}
       >
+        {image && (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={image}
+              alt=""
+              loading="lazy"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                opacity: 0.2,
+              }}
+            />
+          </>
+        )}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/assets/logos/leaf-sage.png"

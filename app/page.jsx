@@ -3,6 +3,7 @@ import {
   ProblemStatement,
   VideoSection,
   CalculatorSection,
+  TeamBand,
   Pillars,
   Culture,
   PremierAndTools,
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <ProblemStatement />
       <CalculatorSection />
+      <TeamBand />
       <PremierAndTools />
       <Pillars />
       <Culture />
