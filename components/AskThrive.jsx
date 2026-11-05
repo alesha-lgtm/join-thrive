@@ -6,7 +6,7 @@ import Icon, { ICONS } from "./Icon";
 const QA = [
   [
     "What's the split?",
-    "You're on a 90/10 split until Thrive collects $12,000 in company dollar for the year. After that, you keep 100% of your commission and pay only a flat per-transaction fee. The cap resets every year.",
+    "You're on a 90/10 split until Thrive collects $12,000 in company dollar for the year. After that, you keep 100% of your commission and pay only a flat per-transaction fee. The cap resets each year on your anniversary.",
   ],
   [
     "What if I don't hit the cap?",

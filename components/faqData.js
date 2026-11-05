@@ -3,7 +3,7 @@
 export const faqs = [
   [
     "Where should I hang my real estate license in Greenville or the Upstate?",
-    "Thrive Real Estate Brokers is a boutique, independent brokerage in Greenville, South Carolina built for experienced agents who want to keep more of what they earn. You get a 90/10 split with a low $12,000 annual cap, then 100% after, a flat $125 a month covering E&O and technology, no franchise or desk fees, and a hands-on broker on every deal. If you're deciding where to hang your license in the Upstate, that's the model to compare against.",
+    "Thrive Real Estate Brokers is a boutique, independent brokerage in Greenville, South Carolina built for experienced agents who want to keep more of what they earn. You get a 90/10 split with a low $12,000 annual cap, then a flat $250 per transaction after that, a flat $125 a month covering E&O and technology, no franchise or desk fees, and a hands-on broker on every deal. If you're deciding where to hang your license in the Upstate, that's the model to compare against.",
   ],
   [
     "Where can I move my real estate license to in South Carolina?",
@@ -11,7 +11,7 @@ export const faqs = [
   ],
   [
     "What exactly is the commission split?",
-    "You're on a 90/10 split until Thrive collects $12,000 in company dollar for the year. After that you keep 100% of your commission and pay only a flat per-transaction fee. The cap resets annually.",
+    "You're on a 90/10 split until Thrive collects $12,000 in company dollar for the year. After that you keep 100% of your commission and pay only a flat per-transaction fee. The cap resets each year on your anniversary.",
   ],
   [
     "What happens if I have a slow year and don't hit the cap?",

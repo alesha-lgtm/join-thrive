@@ -26,7 +26,7 @@ const steps = [
   [
     "04",
     "It resets, no penalty",
-    "Each new year the cap starts fresh. Slow year and didn't cap? No problem, no clawback. You simply stayed on 90/10.",
+    "Every year on your anniversary, the cap starts fresh. Slow year and didn't cap? No problem, no clawback. You simply stayed on 90/10.",
   ],
 ];
 

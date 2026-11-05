@@ -667,9 +667,9 @@ export function SplitModel() {
       "Once Thrive has collected $12,000, you keep 100% of your commission, just a flat per-transaction fee from there.",
     ],
     [
-      "Every new year",
+      "Every anniversary",
       "Resets",
-      "The cap starts fresh each year. No rollover penalties, no clawbacks if you came up short.",
+      "The cap starts fresh each year on your anniversary. No rollover penalties, no clawbacks if you came up short.",
     ],
   ];
   return (
